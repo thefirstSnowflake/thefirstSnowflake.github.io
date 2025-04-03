@@ -1,0 +1,124 @@
+.navbar-custom {
+  background-color: white;
+  font-size: 20px;
+}
+
+
+.custom-footer { 
+  background: linear-gradient(#F15833, #F77253); 
+  color: white; 
+  padding: 20px 10px; 
+  justify-content: left;
+  overflow: hidden;
+  height: 230px; 
+ 
+} 
+
+.main-font {
+  font-size: 40px;
+}
+
+.font {
+  font-size: 20px;
+}
+
+/* подключаю свой шрифт */
+@font-face {
+  font-family: 'Jura';
+  src: url('/fonts/juramedium.woff') format('woff'),
+}
+/* применяю шрифт ко всему телу сайта */
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+
+.footer-image {
+ 
+  position: absolute;
+  bottom: -40%; /* Частично скрываем изображение, оставляя видимую половину */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translate(-50%, 0); /* Компенсируем сдвиг для точного центрирования */
+  
+  height: auto; /* Сохраняем пропорции изображения */
+}
+
+
+
+.btn-card-style {
+  border: 2px solid #62E0E8;
+  border-radius: 0%;
+  font-size: 20px;
+}
+
+.title-style {
+  color:#F15833;
+  font-size: 24px;
+}
+
+.text-style {
+  color:#464646;
+  font-size: 20px;
+}
+
+.form-style {
+  border: 1px solid #F15833;
+  border-radius: 0%;
+  font-size: 15px;
+  width: 433px;
+}
+
+.form-style-wish {
+  border: 1px solid #F15833;
+  border-radius: 0%;
+  font-size: 15px;
+  width: 433px;
+  height: 338px;
+}
+
+.container-form {
+  margin-left: 98px;
+  width: 734px;
+  height: 576px;
+  border: 3px solid #F15833;
+  border-radius: 0%;
+  
+}
+
+.forms-padding {
+  padding-top: 36px;
+  padding-left: 26px;
+}
+
+.button-form-padding {
+ 
+  padding-left: 56px;
+}
+
+.flex-properties {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-content {
+  margin-left: 16px;
+}
+
+.overlay-image {
+  width: 300px; /* Ширина накладываемой картинки */
+  height: 300px;
+  z-index: 10; /* Обеспечиваем, чтобы картинка была сверху */
+}
+
+.container-card {
+  background-image: url('images/Frame-square.png');
+  background-size: cover;
+  background-position: center;
+  height: 442px; /* Устанавливаем высоту контейнера */
+  width: 442px;
+}
+
+.card-container-padding {
+  padding-top: 109px;
+  padding-left: 71px;
+}
