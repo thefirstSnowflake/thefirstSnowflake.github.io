@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -73,12 +74,14 @@
 <!--карусель со списком элементов-->
     <section>
     <div style="margin-top: 130px;">
+      <input class="form-style" type=”text” onkeyup="cardFilter()" id="searchCard" style="margin-left: 50px; height: 45px; margin-bottom: 50px; padding-left: 10px;" placeholder="Введите название песни или исполнителя">
       <div id="carouselExampleControls" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
+                 
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/Goodbye-to-a-world.jpg" class="overlay-image">
                   </div>
@@ -97,45 +100,35 @@
                 </div>
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/She-share-strory.jpg" class="overlay-image">
                   </div>
                   
                   
                   <div class="card-body" style="padding-left: 38px;">
-
-                    
                     <h5 class="title-style">Linearwave, Tuuh</h5>
                     <p class="text-style">she share story</p>
                     <a href="sss-descr.html" class="btn btn-card-style">Подробнее</a>
-                    
-                  
-                 
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/First-date.jpg" class="overlay-image">
                   </div>
                   
                   
                   <div class="card-body" style="padding-left: 38px;">
-
-                    
                     <h5 class="title-style">Frad</h5>
                     <p class="text-style">first date</p>
                     <a href="fd-descr.html" class="btn btn-card-style">Подробнее</a>
-                    
-                  
-                 
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/Eternal-youth.jpg" class="overlay-image">
                   </div>
@@ -156,7 +149,7 @@
             <div class="row">
              
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/She-share-strory.jpg" class="overlay-image">
                   </div>
@@ -175,7 +168,7 @@
                 </div>
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/Goodbye-to-a-world.jpg" class="overlay-image">
                   </div>
@@ -194,7 +187,7 @@
                 </div>
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/Eternal-youth.jpg" class="overlay-image">
                   </div>
@@ -208,7 +201,7 @@
                 
               </div>
               <div class="col">
-                <div class="container">
+                <div class="container" name="card">
                   <div class="container-card d-flex card-container-padding">
                     <img src="images/First-date.jpg" class="overlay-image">
                   </div>
@@ -257,29 +250,33 @@
   <div class="container container-form">
     
    <div class="forms-padding">
-<form>
+<form id="wishesForm" onsubmit="handleFormSubmit(event)">
   <div class="mb-3 d-flex flex-properties">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#F15833" class="bi bi-file-person" viewBox="0 0 16 16">
       <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
       <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
     </svg>
-    <input class="form-control form-style" id="exampleInputName1" placeholder="Ваше имя">
+    <input class="form-control form-style" id="name" name="name" placeholder="Ваше имя" onclick="clearNotice()">
+    <p id="errorNoticeName" style="color:red"></p>
   </div>
   <div class="mb-3 d-flex flex-properties">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#F15833" class="bi bi-envelope-exclamation" viewBox="0 0 16 16">
       <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
       <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0m0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
     </svg>
-    <input type="email" class="form-control form-style" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Ваш email">
+    <input class="form-control form-style" id="email" name="email" aria-describedby="emailHelp" placeholder="Ваш email" onclick="clearNotice()">
+    <p id="errorNoticeEmail" style="color:red"></p>
   </div>
+ 
   <div class="mb-3 d-flex flex-properties">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#F15833" class="bi bi-pen" viewBox="0 0 16 16">
       <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
     </svg>
-    <input class="form-control form-style-wish" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Пишите пожелания сюда...">
+    <input class="form-control form-style-wish" id="wishes" name="wishes" placeholder="Пишите пожелания сюда..." onclick="clearNotice()">
+    <p id="errorNoticeWishes" style="color:red"></p>
   </div>
 </div>
-<div class="button-form-padding"><button type="submit" class="btn btn-card-style">Отправить</button></div>
+<div class="button-form-padding"><button type="submit" class="btn btn-card-style" data-bs-toggle="modal" data-bs-target="#exampleModal">Отправить</button></div>
 </form>
 </div>
 
@@ -316,8 +313,30 @@
       </div>
   </footer>
 </section>
+
+
+<!--Диалоговое окно после заполнения формы-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" style="background-color: #F15833; border: 0px;"class="btn btn-secondary" data-bs-dismiss="modal">Ок</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
     
 </body>
 </html>
